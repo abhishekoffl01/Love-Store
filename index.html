@@ -8,113 +8,62 @@
 /* Base */
 body {
     margin: 0;
+    height: 100vh;
     font-family: Arial, sans-serif;
-    background: #f5f5f5;
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
     overflow: hidden;
 }
 
-/* Top shopping header */
-.header {
-    background: #ff3f6c;
-    color: white;
-    padding: 14px;
+/* Centered intro */
+.intro {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    font-size: 1.2rem;
-    font-weight: bold;
+    padding: 20px;
 }
 
-/* Fake search bar */
-.search {
-    padding: 10px;
-    background: white;
-}
-
-.search input {
-    width: 100%;
-    padding: 12px;
-    border-radius: 6px;
-    border: 1px solid #ddd;
-    font-size: 1rem;
-}
-
-/* Message */
-.message {
-    text-align: center;
-    padding: 20px 10px;
-    background: white;
-}
-
-.message h1 {
-    font-size: 1.6rem;
+.intro h1 {
+    font-size: 2.2rem;
     color: #b30059;
-    margin: 5px 0;
+    margin: 10px 0;
 }
 
-.message p {
-    font-size: 1.1rem;
+.intro p {
+    font-size: 1.3rem;
     color: #333;
+    margin: 20px 0 30px;
 }
 
 /* Buttons */
 .buttons {
     position: relative;
-    height: 70px;
-    margin-top: 15px;
+    width: 100%;
+    height: 80px;
 }
 
 button {
-    padding: 12px 30px;
-    font-size: 1rem;
-    border-radius: 25px;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 30px;
     border: none;
     cursor: pointer;
     position: absolute;
 }
 
 #yesBtn {
-    background: #ff3f6c;
+    background: #ff3366;
     color: white;
     left: 50%;
     transform: translateX(-50%);
 }
 
 #noBtn {
-    background: #bbb;
-    color: #000;
+    background: #666;
+    color: white;
     left: 65%;
-}
-
-/* Shopping grid (NO IMAGES) */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    padding: 12px;
-}
-
-.card {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.card .box {
-    height: 120px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #ffd1dc, #ffe6ec);
-    margin-bottom: 10px;
-}
-
-.card h3 {
-    margin: 5px 0;
-    font-size: 1rem;
-}
-
-.card p {
-    margin: 0;
-    color: #777;
-    font-size: 0.9rem;
 }
 
 /* Video overlay */
@@ -124,40 +73,30 @@ button {
     inset: 0;
     background: black;
     z-index: 999;
+    overflow-y: auto;
 }
 
-/* 8-video grid */
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 6px;
-    height: 100%;
-    padding: 6px;
+/* Vertical video list (mobile reels style) */
+.video-list {
+    display: flex;
+    flex-direction: column;
 }
 
-.video-grid video {
+.video-list video {
     width: 100%;
-    height: 100%;
+    height: 90vh;
     object-fit: cover;
-    border-radius: 8px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-    MYNTRA ❤️ LOVE EDITION
-</div>
-
-<div class="search">
-    <input type="text" placeholder="Search for love, smiles, memories…">
-</div>
-
-<div class="message">
+<!-- INTRO SCREEN -->
+<div class="intro">
     <h1>I miss you so much, Gaanu.</h1>
-    <h1>And I love you so much ❤️</h1>
+    <h1>I love you so much ❤️</h1>
+
     <p>Do you want to know how you look through my eyes?</p>
 
     <div class="buttons">
@@ -166,21 +105,34 @@ button {
     </div>
 </div>
 
-<!-- Fake shopping products -->
-<div class="grid">
-    <div class="card">
-        <div class="box"></div>
-        <h3>Smile Collection</h3>
-        <p>Out of stock ❤️</p>
+<!-- FULL SCREEN VIDEOS -->
+<div id="overlay">
+    <div class="video-list">
+        <video src="1A.mp4" autoplay muted loop playsinline></video>
+        <video src="2A.mp4" autoplay muted loop playsinline></video>
+        <video src="3A.mp4" autoplay muted loop playsinline></video>
+        <video src="4A.mp4" autoplay muted loop playsinline></video>
+        <video src="5A.mp4" autoplay muted loop playsinline></video>
+        <video src="6A.mp4" autoplay muted loop playsinline></video>
+        <video src="7A.mp4" autoplay muted loop playsinline></video>
+        <video src="8A.mp4" autoplay muted loop playsinline></video>
     </div>
-    <div class="card">
-        <div class="box"></div>
-        <h3>Cutest Moments</h3>
-        <p>Only 1 left 😉</p>
-    </div>
-    <div class="card">
-        <div class="box"></div>
-        <h3>My Favourite You</h3>
-        <p>Best Seller 💕
+</div>
+
+<script>
+function runAway() {
+    const btn = document.getElementById("noBtn");
+    btn.style.left = Math.random() * (window.innerWidth - 120) + "px";
+    btn.style.top = Math.random() * 80 + "px";
+}
+
+function showVideos() {
+    document.getElementById("overlay").style.display = "block";
+}
+</script>
+
+</body>
+</html>
+
 
 
