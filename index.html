@@ -2,46 +2,51 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For My Gaanu ❤️</title>
+<title>FOR MY GAANU ❤️</title>
 
 <style>
 body {
     margin: 0;
     height: 100vh;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background: linear-gradient(to right, #ff9a9e, #fad0c4);
     overflow: hidden;
 }
 
-/* Main message */
+/* Main content */
 .content {
     text-align: center;
-    padding-top: 60px;
+    padding: 70px 20px 0;
 }
 
 .content h1 {
-    font-size: 2rem;
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
     color: #b30059;
-    margin: 6px 0;
+    margin: 10px 0;
 }
 
-.content p {
-    font-size: 1.15rem;
+.content h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
     color: #333;
-    margin-top: 12px;
+    margin-top: 20px;
 }
 
 /* Buttons */
 .buttons {
     position: relative;
-    margin-top: 30px;
-    height: 80px;
+    margin-top: 35px;
+    height: 90px;
 }
 
 button {
-    padding: 14px 36px;
-    font-size: 1.1rem;
-    border-radius: 30px;
+    padding: 16px 42px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    border-radius: 35px;
     border: none;
     cursor: pointer;
     position: absolute;
@@ -65,12 +70,12 @@ button {
     display: none;
     position: fixed;
     inset: 0;
-    background: black;
+    background: #000;
     z-index: 999;
-    padding: 12px;
+    padding: 14px;
 }
 
-/* Video grid for 6 videos */
+/* Video grid (6 videos) */
 .video-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -83,9 +88,9 @@ button {
 .video-grid video {
     width: 100%;
     height: 100%;
-    object-fit: contain;   /* keeps original ratio */
+    object-fit: contain;
     background: black;
-    border-radius: 16px;
+    border-radius: 18px;
 }
 </style>
 </head>
@@ -93,10 +98,10 @@ button {
 <body>
 
 <div class="content">
-    <h1>I miss you so much, Gaanu.</h1>
-    <h1>And I love you so much ❤️</h1>
+    <h1>I MISS YOU SO MUCH, GAANU.</h1>
+    <h1>I LOVE YOU SO MUCH ❤️</h1>
 
-    <p>Do you want to know how you look through my eyes?</p>
+    <h2>DO YOU WANT TO KNOW HOW YOU LOOK THROUGH MY EYES?</h2>
 
     <div class="buttons">
         <button id="yesBtn" onclick="showVideos()">YES ❤️</button>
@@ -104,7 +109,7 @@ button {
     </div>
 </div>
 
-<!-- Full-screen video overlay -->
+<!-- Full screen videos -->
 <div id="overlay">
     <div class="video-grid">
         <video src="1A.mp4" autoplay muted loop playsinline></video>
@@ -119,8 +124,8 @@ button {
 <script>
 function runAway() {
     const btn = document.getElementById("noBtn");
-    btn.style.left = Math.random() * (window.innerWidth - 140) + "px";
-    btn.style.top = Math.random() * 60 + "px";
+    btn.style.left = Math.random() * (window.innerWidth - 150) + "px";
+    btn.style.top = Math.random() * 70 + "px";
 }
 
 function showVideos() {
@@ -130,4 +135,5 @@ function showVideos() {
 
 </body>
 </html>
+
 
