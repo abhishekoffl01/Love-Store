@@ -57,6 +57,7 @@ button {
     color: white;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 5;
 }
 
 #noBtn {
@@ -83,7 +84,7 @@ button {
     gap: 12px;
 }
 
-/* Big videos span full width */
+/* Big videos */
 .big {
     grid-column: span 2;
     height: 32vh;
@@ -98,7 +99,7 @@ button {
 .mosaic video {
     width: 100%;
     height: 100%;
-    object-fit: contain;   /* keeps original ratio */
+    object-fit: contain;
     background: black;
     border-radius: 18px;
 }
@@ -119,7 +120,7 @@ button {
     </div>
 </div>
 
-<!-- Mosaic video overlay -->
+<!-- Video Overlay -->
 <div id="overlay">
     <div class="mosaic">
         <!-- Top big -->
@@ -138,9 +139,31 @@ button {
 
 <script>
 function runAway() {
-    const btn = document.getElementById("noBtn");
-    btn.style.left = Math.random() * (window.innerWidth - 150) + "px";
-    btn.style.top = Math.random() * 70 + "px";
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+
+    const yesRect = yesBtn.getBoundingClientRect();
+
+    let x, y;
+    let safe = false;
+
+    while (!safe) {
+        x = Math.random() * (window.innerWidth - 160);
+        y = Math.random() * (window.innerHeight - 160);
+
+        // Ensure NO never overlaps YES
+        if (
+            x + 140 < yesRect.left ||
+            x > yesRect.right + 20 ||
+            y + 70 < yesRect.top ||
+            y > yesRect.bottom + 20
+        ) {
+            safe = true;
+        }
+    }
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
 }
 
 function showVideos() {
@@ -150,6 +173,7 @@ function showVideos() {
 
 </body>
 </html>
+
 
 
 
