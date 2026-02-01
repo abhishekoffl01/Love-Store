@@ -14,9 +14,10 @@ body {
     overflow: hidden;
 }
 
-/* Centered intro */
+/* CENTERED QUESTION SCREEN */
 .intro {
-    height: 100vh;
+    position: fixed;
+    inset: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,28 +27,29 @@ body {
 }
 
 .intro h1 {
-    font-size: 2.2rem;
+    font-size: 2.6rem;        /* BIG */
     color: #b30059;
-    margin: 10px 0;
+    margin: 12px 0;
+    line-height: 1.2;
 }
 
 .intro p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;        /* BIG QUESTION */
     color: #333;
-    margin: 20px 0 30px;
+    margin: 30px 0 35px;
 }
 
 /* Buttons */
 .buttons {
     position: relative;
     width: 100%;
-    height: 80px;
+    height: 90px;
 }
 
 button {
-    padding: 15px 40px;
-    font-size: 1.2rem;
-    border-radius: 30px;
+    padding: 18px 45px;
+    font-size: 1.3rem;
+    border-radius: 35px;
     border: none;
     cursor: pointer;
     position: absolute;
@@ -61,12 +63,12 @@ button {
 }
 
 #noBtn {
-    background: #666;
+    background: #555;
     color: white;
     left: 65%;
 }
 
-/* Video overlay */
+/* VIDEO SCREEN */
 #overlay {
     display: none;
     position: fixed;
@@ -76,7 +78,7 @@ button {
     overflow-y: auto;
 }
 
-/* Vertical video list (mobile reels style) */
+/* BIG MOBILE VIDEOS (REELS STYLE) */
 .video-list {
     display: flex;
     flex-direction: column;
@@ -84,7 +86,7 @@ button {
 
 .video-list video {
     width: 100%;
-    height: 90vh;
+    height: 92vh;
     object-fit: cover;
 }
 </style>
@@ -92,7 +94,7 @@ button {
 
 <body>
 
-<!-- INTRO SCREEN -->
+<!-- BIG CENTER MESSAGE -->
 <div class="intro">
     <h1>I miss you so much, Gaanu.</h1>
     <h1>I love you so much ❤️</h1>
@@ -122,8 +124,8 @@ button {
 <script>
 function runAway() {
     const btn = document.getElementById("noBtn");
-    btn.style.left = Math.random() * (window.innerWidth - 120) + "px";
-    btn.style.top = Math.random() * 80 + "px";
+    btn.style.left = Math.random() * (window.innerWidth - 140) + "px";
+    btn.style.top = Math.random() * 100 + "px";
 }
 
 function showVideos() {
@@ -133,6 +135,3 @@ function showVideos() {
 
 </body>
 </html>
-
-
-
