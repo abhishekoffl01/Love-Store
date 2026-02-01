@@ -13,7 +13,7 @@ body {
     overflow: hidden;
 }
 
-/* Main text */
+/* Main message */
 .content {
     text-align: center;
     padding-top: 60px;
@@ -67,25 +67,25 @@ button {
     inset: 0;
     background: black;
     z-index: 999;
-    padding: 10px;
+    padding: 12px;
 }
 
-/* Video grid – optimized for mobile */
+/* Video grid for 6 videos */
 .video-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 12px;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 14px;
     height: 100%;
 }
 
-/* Video cards */
+/* Video styling */
 .video-grid video {
     width: 100%;
     height: 100%;
-    object-fit: contain;   /* KEY FIX */
+    object-fit: contain;   /* keeps original ratio */
     background: black;
-    border-radius: 14px;
+    border-radius: 16px;
 }
 </style>
 </head>
@@ -104,12 +104,10 @@ button {
     </div>
 </div>
 
-<!-- Full-screen video view -->
+<!-- Full-screen video overlay -->
 <div id="overlay">
     <div class="video-grid">
         <video src="1A.mp4" autoplay muted loop playsinline></video>
-        <video src="2A.mp4" autoplay muted loop playsinline></video>
-        <video src="3A.mp4" autoplay muted loop playsinline></video>
         <video src="4A.mp4" autoplay muted loop playsinline></video>
         <video src="5A.mp4" autoplay muted loop playsinline></video>
         <video src="6A.mp4" autoplay muted loop playsinline></video>
@@ -132,3 +130,4 @@ function showVideos() {
 
 </body>
 </html>
+
